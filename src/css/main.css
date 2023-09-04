@@ -1,0 +1,113 @@
+
+@font-face {
+    font-family: 'Crédible';
+    src: local('Crédible'),
+    url("../Crédible-Regular.woff") format("woff");
+}
+
+:root {
+
+    --bg-img        : url('../img/bg.png');
+    --bg-color      : #0B0212;
+
+    --main-bg       : black;
+    --main-color    : white;
+
+    --accent-color  : #D5A1C4;
+
+    --pfp           : url('../img/Me.jpg');
+}
+
+a {
+    color: var(--accent-color);
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover { color: var(--main-color); }
+a::before { content: '— '; }
+a::after { content: ' —'; }
+a:hover::before { content: '♡ '; }
+a:hover::after { content: ' ♡'; }
+
+.bio a::before { content: ''; }
+.bio a::after { content: ''; }
+
+h1 {
+    font-family: 'Crédible', sans-serif;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    margin: 5px;
+    min-height: 1.5em;
+}
+
+div#pfp {
+    width: 200px;
+    height: 200px;
+    background: var(--pfp);
+    background-size: 100%;
+}
+div#outline {
+    width: 270px;
+    height: 250px;
+    background: var(--accent-color);
+}
+
+code {
+    color: var(--accent-color);
+    font-family: monospace;
+}
+
+/* -- */
+
+body {
+    background: var(--bg-img) var(--bg-color);
+    text-align: center;
+    color: var(--accent-color);
+}
+
+main, header div {
+    display: block;
+    margin: 1em auto;
+
+    background: var(--main-bg);
+    color: var(--main-color);
+
+    padding: 1em;
+
+    width: 50%;
+}
+header div { width: 30%; }
+
+main {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat( auto-fill, minmax(250px, 1fr) );
+}
+
+/* -- */
+
+#statuscafe {
+    padding: 5px;
+    border: 1px solid var(--accent-color);
+    width: 90%;
+}
+#statuscafe-username, #statuscafe-content {
+    margin: 0 auto;
+    width: 80%;
+    padding: 0px;
+}
+
+/* -- Responsive Stuff -- */
+@media only screen and (max-width: 800px) {
+    main, header div {
+        width: 90%;
+    }
+}
