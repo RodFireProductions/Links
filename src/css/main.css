@@ -29,8 +29,15 @@ a::after { content: ' —'; }
 a:hover::before { content: '♡ '; }
 a:hover::after { content: ' ♡'; }
 
-.bio a::before { content: ''; }
-.bio a::after { content: ''; }
+.bio a::before, .buttons a::before { content: ''; }
+.bio a::after, .buttons a::after { content: ''; }
+
+hr {
+    border: none;
+    border-bottom: dotted 1px var(--main-color);
+    margin: 5px auto;
+    width: 50%;
+}
 
 h1 {
     font-family: 'Crédible', sans-serif;
@@ -124,5 +131,10 @@ main {
 @media only screen and (max-width: 800px) {
     main, header div, footer {
         width: 90%;
+    }
+}
+@media only screen and (min-width: 1600px) {
+    main {
+        width: 900px;
     }
 }
