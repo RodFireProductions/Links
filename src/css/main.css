@@ -89,6 +89,7 @@ footer img {
 
 body {
     background: var(--bg-img) var(--bg-color);
+    background-attachment: fixed;
     text-align: center;
     color: var(--accent-color);
 }
