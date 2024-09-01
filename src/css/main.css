@@ -7,8 +7,8 @@
 
 :root {
 
-    --bg-img        : url('../img/bg.png');
-    --bg-color      : #0B0212;
+    --bg-img        : url('../img/mushroom_bg.webp');
+    --bg-color      : #3f4661; /* #ADB6DA */
 
     --main-bg       : black;
     --main-color    : white;
@@ -16,6 +16,8 @@
     --accent-color  : #D5A1C4;
 
     --pfp           : url('../img/Me.jpg');
+
+	--font-size		: calc(1rem + (1vw / 5));
 }
 
 a {
@@ -41,6 +43,7 @@ hr {
 
 h1 {
     font-family: 'Crédible', sans-serif;
+    font-size: calc(var(--font-size) + 1rem);
 }
 
 ul {
@@ -95,29 +98,45 @@ footer img {
 body {
     background: var(--bg-img) var(--bg-color);
     background-attachment: fixed;
+	background-size: 75%;
     text-align: center;
     color: var(--accent-color);
+	margin: 1em 1em 0em;
+	font-size: var(--font-size);
+    padding: .5em;
+
+	display: grid;
+	grid-template-columns: 25% auto;
+    grid-gap: .5em;
 }
 
-main, header div, footer {
+section, header div {
     display: block;
-    margin: 1em auto;
+    margin: auto;
 
     background: var(--main-bg);
     color: var(--main-color);
 
     padding: 1em;
-
-    width: 50%;
 }
-header div, footer { width: 30%; }
+
+section {
+	width: 95%;
+	height: 95%;
+}
+
+header div {
+	width: 80%;
+	margin-top: 1em;
+}
 
 main {
     display: grid;
     justify-content: center;
     align-content: center;
     grid-auto-flow: dense;
-    grid-template-columns: repeat( auto-fill, minmax(250px, 1fr) );
+    grid-template-columns: repeat( auto-fill, minmax(25%, 1fr) );
+	grid-gap: 2em;
 }
 
 /* -- */
@@ -125,7 +144,9 @@ main {
 #statuscafe {
     padding: 5px;
     border: 1px solid var(--accent-color);
-    width: 90%;
+    width: 70%;
+	margin: .5em auto;
+	font-size: var(--font-size);
 }
 #statuscafe-username, #statuscafe-content {
     margin: 0 auto;
@@ -133,14 +154,46 @@ main {
     padding: 0px;
 }
 
+
 /* -- Responsive Stuff -- */
-@media only screen and (max-width: 800px) {
-    main, header div, footer {
-        width: 90%;
+
+@media all and (max-width: 1500px) {
+    body {
+        grid-template-columns: 40% auto;
     }
-}
-@media only screen and (min-width: 1600px) {
     main {
-        width: 900px;
+        grid-template-columns: repeat( auto-fill, minmax(350px, 1fr) );
     }
 }
+
+@media all and (max-width: 1200px) {
+    body {
+        grid-template-columns: 50% auto;
+    }
+}
+
+@media all and (max-width: 800px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media all and (max-width: 420px) {
+    body {
+        margin: 1em 0em 0em;
+        padding: 0px;
+    }
+}
+
+/*
+@media all and (max-width: 420px ) {
+    div#pfp {
+        width: 150px;
+        height: 150px;
+    }
+    div#outline {
+        width: 220px;
+        height: 200px;
+    }
+}
+*/
