@@ -16,7 +16,7 @@
     --accent-color  : #D5A1C4;
 
     --pfp           : url('../img/Me.jpg');
-	
+
 	--font-size		: calc(1rem + (1vw / 5));
 }
 
@@ -43,6 +43,7 @@ hr {
 
 h1 {
     font-family: 'Crédible', sans-serif;
+    font-size: calc(var(--font-size) + 1rem);
 }
 
 ul {
@@ -102,9 +103,11 @@ body {
     color: var(--accent-color);
 	margin: 1em 1em 0em;
 	font-size: var(--font-size);
-	
+    padding: .5em;
+
 	display: grid;
 	grid-template-columns: 25% auto;
+    grid-gap: .5em;
 }
 
 section, header div {
@@ -133,7 +136,7 @@ main {
     align-content: center;
     grid-auto-flow: dense;
     grid-template-columns: repeat( auto-fill, minmax(25%, 1fr) );
-	grid-gap: 1em;
+	grid-gap: 2em;
 }
 
 /* -- */
@@ -153,15 +156,44 @@ main {
 
 
 /* -- Responsive Stuff -- */
-/*
-@media only screen and (max-width: 800px) {
-    main, header div, footer {
-        width: 90%;
+
+@media all and (max-width: 1500px) {
+    body {
+        grid-template-columns: 40% auto;
+    }
+    main {
+        grid-template-columns: repeat( auto-fill, minmax(350px, 1fr) );
     }
 }
-@media only screen and (min-width: 1600px) {
-    main {
-        width: 900px;
+
+@media all and (max-width: 1200px) {
+    body {
+        grid-template-columns: 50% auto;
+    }
+}
+
+@media all and (max-width: 800px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media all and (max-width: 420px) {
+    body {
+        margin: 1em 0em 0em;
+        padding: 0px;
+    }
+}
+
+/*
+@media all and (max-width: 420px ) {
+    div#pfp {
+        width: 150px;
+        height: 150px;
+    }
+    div#outline {
+        width: 220px;
+        height: 200px;
     }
 }
 */
